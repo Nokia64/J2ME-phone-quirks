@@ -1,6 +1,7 @@
 # Vendor-specific MIDlet attributes
 
-### Nokia Series 60
+### Nokia
+#### Series 60
 | Attribute | Description | Values
 | ------------ | ------------ | ------------
 | Nokia-MIDlet-Category | Destination folder for MIDlet installation. _Since: S60 2nd Edition_ | `Application` , `Game`
@@ -26,7 +27,7 @@
 |  Nokia-MIDlet-Splash-Screen-Image | Defines the custom start-up screen ("splash screen") used by the MIDlet. This attribute can also be used to define multiple custom start-up screens for the device to choose from or to disable ("suppress") the start-up screen for the MIDlet. _Since: Symbian^3 (Java Runtime 2.1)_ | `(image),(image),...` , `suppress`
 |  Nokia-MIDlet-Tap-Detection-Options  | Sets the size of tap detection area and tap time-out on Touch UI devices. If the pointer stays pressed within the detection area and does not surpass the time-out value, the event is considered a single tap. If the pointer leaves the detection area or the time-out passes, drag events start being generated. The detection area is a rectangle, measured in twips. The entered value is half the length of one side of the rectangle. _Since: S60 5th Edition (Java Runtime 1.4)_ | `(detection rectangle size),(timeout)`
 
-####Examples:
+#### Examples:
 ```
 Nokia-MIDlet-Category: Application
 Nokia-MIDlet-Original-Display-Size: 176,208
@@ -50,7 +51,7 @@ Nokia-MIDlet-Delete-Confirm-en: Are you sure you want to delete this MIDlet?
 Nokia-UI-Enhancement: CanvasHasBackground,MusicKeysSupported
 ```
 
-### Nokia Series 40
+#### Series 40
 
 | Attribute | Description | Values
 | ------------ | ------------ | ------------
@@ -75,6 +76,115 @@ Nokia-UI-Enhancement: CanvasHasBackground,MusicKeysSupported
 #### Notes
  - Background MIDlets are enabled only for operator and manufacturer domains.
 - Nokia S40 phones return an error when unknown attributes starting with `MIDlet-` are found. So for example Samsung's `MIDlet-Touch-Support: True` attribute causes an error when triying to launch on a Nokia phone.
+- `(locale)` is one of the following values:
+
+```
+S40 and Symbian
+
+Arabic: ar
+Basque: eu
+Bulgarian: bg-BG
+Catalan: ca
+China: zh-CN
+Croatian: hr-HR
+Czech: cs-CZ
+Danish: da-DK
+Dutch: nl-NL
+English: en
+English (Taiwan): en
+English (Japan): en
+English (Hong Kong): en
+English (PRC China): en
+English (Thailand): en
+English (US): en-US
+Estonian: et-EE
+Farsi: fa
+Finnish: fi-FI
+French: fr
+French (Canadian): fr-CA
+Galician: gl
+German: de
+Greek: el-GR
+Hebrew: he-IL
+Hindi: hi-IN
+Hongkong: zh-HK
+Hungarian: hu-HU
+Icelandic: is-IS
+Indonesian: id-ID
+Italian: it
+Japanese: ja-JP
+Latvian: lv-LV
+Lithuanian: lt-LT
+Malay: ms-MY
+Norwegian: no-NO
+Polish: pl-PL
+Portuguese: pt-PT
+Portuguese (Brazilian): pt-BR
+Romanian: ro-RO
+Russian: ru-RU
+Serbian: sr-YU
+Slovak: sk-SK
+Slovenian: sl-SI
+Spanish: es-ES
+Spanish (Latin America): es-US
+Swedish: sv
+Tagalog: tl-PH
+Taiwan: zh-TW
+Thai: th-TH
+Turkish: tr-TR
+Ukrainian: uk-UA
+Urdu: ur
+Vietnamese: vi-VN 
+
+S40 only
+
+Afrikaans: af-ZA
+Albanian: sq
+Amharic: am-ET
+Armenian: hy
+Assamese: as-IN
+Azeri: az-AZ
+Belarusian: be
+Bengali: bn
+Bengali_BD: bn-BD
+Bosnian: bs-BA
+Chinese (Traditional): zh-TW
+Euskara: eu
+Georgian: ka-GE
+Gujarati: gu-IN
+Hausa: ha
+Igbo: ig-NG
+Kannada: kn-IN
+Kashmiri: ks-IN
+Kazak: kk-KZ
+Khmer: km-KH
+Kirghiz: ky-KG
+Lao: lo-LA
+Lingala: ln
+Macedonian: mk-MK
+Malayalam: ml-IN
+Marathi: mr-IN
+Mongolian: mn-MN
+Oriya: or-IN
+Persian: fa-AF
+Punjabi: pa
+Pushto: ps
+Sesotho: st
+Sinhala: si-LK
+Swahili: sw
+Tamil: ta
+Tajik: tg-TJ
+Telugu: te-IN
+Turkmen: tk
+Uzbek: uz-UZ
+Xhosa: xh
+Yoruba: yo
+Zulu: zu
+
+Symbian only
+
+Korean: ko-KR
+```
 #### Examples
 ```
 Nokia-MIDlet-Background-Exit-Confirm-en : Don't stop me please
@@ -143,10 +253,20 @@ Content-Folder: file:///CFCard/
 | UseNativeCommands | _Unknown_ | `true` , `false`
 | LGE-MIDlet-TargetLCD-Height / LGE-MIDlet-TargetLCD-Width | _Unknown_ | `(width/height)`
 | LGE-MIDlet-Display-Nav-Keypad | Specifies whether to show a virtual keypad on phones without a physical keypad. | `yes` , `no`
-
+| LGE-MIDlet-On-Screen-Keypad | _Unknown_ (Tried on a real LG phone, did not have any effect. Could be a mixture of Nokia's `Nokia-MIDlet-On-Screen-Keypad`)
+| LGE-MIDlet-Display-Mode | _Unknown_ | `both`
 ### Motorola
 | Attribute | Description | Values
 | ------------ | ------------ | ------------
+| FlipInsensitive | MIDlets with this Motorola specific attribute will enable the MIDlet to run with the flip closed. Audio resources are still available to the MIDlet. | `true` , `false`
+| Background | MIDlets with this Motorola specific attribute will continue to run when not in focus. | `true` , `false`
+| MOT-MIDlet-Web-Session | APN profile the MIDlet should use. If it does not exists, installation will fail. _MOTOMAGX platform_ | `(profile)`
+| Morphing-Mode | Sets the ModeShift technology mode. Valid modes are `MODE_STANDBY` , `MODE_NAVIGATION` , `MODE_PHONE` , `MODE_MUSIC` , `MODE_STILLCAPTURE` , `MODE_VIDEOCAPTURE` , `MODE_STILLPLAYBACK` , `MODE_VIDEOPLAYBACK` | `(mode)`
+| Mot-Data-Space-Requirements | Required storage space for the MIDlet data storage in kilobytes. | `(kb)`
+| Mot-Program-Space-Requirements | Required storage space for the MIDlet in kilobytes. | `(kb)`
+| MIDlet-PreInstalled | Specifies whether the MIDlet was preinstalled on the phone. Does not allows MIDlet removal. | `TRUE` , `FALSE`
+| Mot-Midlet-URL | Specifies the JAD URL for the Motorola's Tell-A-Friend feature. | `(url)`
+
 
 #### Motorola iDEN devices
 | Attribute | Description | Values
@@ -167,4 +287,33 @@ iDEN-MIDlet-Name-es: Serpiente
 iDEN-MIDlet-Vendor-es: Motorola
 iDEN-MIDlet-es-1: Serpiente, , com.motorola.snake.Snake
 ```
+
+### Vodafone
+| Attribute | Description | Values
+| ------------ | ------------ | ------------
+| MIDxlet-API | The Vodafone API that should be used. | `VSCL-1.0.1` , `VSCL-1.1.0` , `JSCL-1.2.2` , `JSCL-1.3.2 ` _(known)_
+| MIDxlet-Network | Whether network access is required by the MIDlet | `Y` , `N`
+| MIDxlet-Resident | Whether to allow running the MIDlet on background | `Y` , `N`
+| MIDxlet-Application-Resolution | Resolution of the MIDlet | `(width),(height)`
+| MIDxlet-Aux | Whether to allow external video outputs, like AV TV out. | `Y` , `N`
+| MIDxlet-MSensor | Whether the MIDlet requires motion sensor capabilities. Non-capable devices throw an error at install. | `Y` , `N`
+| MIDxlet-Karaoke | Whether the MIDlet requires launching as a karaoke app. Non-capable devices throw an error at install. | `Y` , `N` , `X`
+| MIDxlet-Sound-Priority | Whether the MIDlet requires MP4 (AAC audio) playback features. Non-capable devices throw an error at install. | `Y` , `N`
+| MIDxlet-WideScreen | Whether the MIDlet should be drawn in landscape mode. | `Y` , `N`
+| MIDxlet-Java-Execution | Whether to allow launching the MIDlet from another MIDlet | `Y` , `N`
+| MIDxlet-Execution-Heap | Required heap size in bytes. If not specified, max value is assumed, | `(b)`
+| MIDxlet-Bluetooth | Whether the MIDlet requires Bluetooth features. | `Y` , `N`
+| MIDxlet-Slave-Application | _Unknown_. Unavailable to untrusted MIDlets | _Unknown_
+| MIDxlet-OPGL | Whether the MIDlet uses MEXA OPGL. | `Y` , `N`
+| MIDxlet-ExSession | Whether or not to use communication of 1MB or more per session. | `Y` , `N`
+| MIDxlet-ExHeap | Whether to use the maximum heap size. | `Y` , `N`
+| MIDxlet-Touch | Whether to hide the virtual keyboard on touch devices without physical keypad. | `Y` , `N`
+| MIDxlet-Rotate | Whether to change the canvas size on screen rotation, or keep it fixed. | `Y` , `N`
+### Unknown / Other vendor
+| Attribute | Description | Known values
+| ------------ | ------------ | ------------
+| Navi-Key-Hidden | _Unknown_  | `true` , `false`
+| hideUseNativeCommands | _Unknown_ | _Unknown_
+| hideUseNativeTextButtons | _Unknown_ | `hide` _(?)_
+| ATT-MIDlet-VirtualKeypad-Use | _Unknown_ | `Yes` , `No`
 
