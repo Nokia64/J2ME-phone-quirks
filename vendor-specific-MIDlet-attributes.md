@@ -255,6 +255,9 @@ Content-Folder: file:///CFCard/
 | LGE-MIDlet-Display-Nav-Keypad | Specifies whether to show a virtual keypad on phones without a physical keypad. | `yes` , `no`
 | LGE-MIDlet-On-Screen-Keypad | _Unknown_ (Tried on a real LG phone, did not have any effect. Could be a mixture of Nokia's `Nokia-MIDlet-On-Screen-Keypad`)
 | LGE-MIDlet-Display-Mode | _Unknown_ | `both`
+| LGE-MIDlet-App-Orientation | Specifies the prefered orientation for the MIDlet cavas | `portrait` , `landscape`
+| LGE-MIDlet-Category | Specifies the category where to install the MIDlet | `Applications` , `Games` (known)
+
 ### Motorola
 | Attribute | Description | Values
 | ------------ | ------------ | ------------
@@ -309,6 +312,29 @@ iDEN-MIDlet-es-1: Serpiente, , com.motorola.snake.Snake
 | MIDxlet-ExHeap | Whether to use the maximum heap size. | `Y` , `N`
 | MIDxlet-Touch | Whether to hide the virtual keyboard on touch devices without physical keypad. | `Y` , `N`
 | MIDxlet-Rotate | Whether to change the canvas size on screen rotation, or keep it fixed. | `Y` , `N`
+
+### Research in Motion _(Blackberry)_
+| Attribute | Description | Known values
+| ------------ | ------------ | ------------
+| RIM-COD-Creation-Time | Date/time at which the COD file was created. Example: `1272372497` | `(date)`
+| RIM-COD-Module-Dependencies | Comma separated list of modules required by the COD file. Known values: `net_rim_cldc` `net_rim_bbapi_options` `net_rim_bbapi_mailv2` `net_rim_bbapi_invoke` `net_rim_os,net_rim_bb_framework_api` `net_rim_bbapi_browser` `net_rim_bbapi_phone` `net_rim_pdap` | `(module),(module),...`
+| RIM-COD-Module-Name | Module provided by this COD file | `(module)`
+| RIM-COD-SHA1 | SHA1 hash of the COD file | `(SHA1)` Example: `82 2f 22 b6 e6 34 ef c3 2b 0e a4 96 22 08 c0 60 39 4d db aa`
+| RIM-COD-Size | Size in bytes of the COD file | `(size)`
+| RIM-COD-URL | URL from which the COD file can be loaded | `(url)`
+| RIM-Library-Flags | Reserved for use by RIM | _Unknown_
+| RIM-MIDlet-Flags | Reserved for use by RIM. Found to contain numerical values | _Unknown_
+| RIM-MIDlet-NameResourceBundle | Name of the resource bundle on which the BlackBerry deviceapplication depends | `(name)`
+| RIM-MIDlet-Position | Suggested position on the device's homescreen. Not necessarily honoured. Takes a numerical value | `(n)`
+
+#### Attributes without proper official documentation found:
+| Attribute | Description | Known values
+| ------------ | ------------ | ------------
+| RIM-TouchCompatibilityMode-UserChangeable | _Unknown_ | `true` , `false` (known)
+| RIM-TouchCompatibilityMode | _Unknown_ | `true` , `false` (known)
+#### Notes
+ - For MIDlet suites, appending `-(n)` specifies the parameters for MIDlet `(n)`
+
 ### Unknown / Other vendor
 | Attribute | Description | Known values
 | ------------ | ------------ | ------------
