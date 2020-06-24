@@ -269,6 +269,7 @@ Content-Folder: file:///CFCard/
 | Mot-Program-Space-Requirements | Required storage space for the MIDlet in kilobytes. | `(kb)`
 | MIDlet-PreInstalled | Specifies whether the MIDlet was preinstalled on the phone. Does not allows MIDlet removal. | `TRUE` , `FALSE`
 | Mot-Midlet-URL | Specifies the JAD URL for the Motorola's Tell-A-Friend feature. | `(url)`
+| Motorola-Image-Width / Motorola-Image-Height | Specify the maximum resolution JPEG file (width and height respectively) after opening the phone. | `(pixels)`
 
 
 #### Motorola iDEN devices
