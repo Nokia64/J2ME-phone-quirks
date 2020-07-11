@@ -236,7 +236,7 @@ Content-Folder: file:///CFCard/
 | LGE-MIDlet-flip-pause | On slide-type phones, specifies whether to pause the MIDlet when a "slide-down" event is received. | `yes` , **`no`**
 | LGE-MIDlet-Indicator | Specifies whether to show the phone status indicator area. | `SHOW` , `HIDE` , `USINGAPI` (controlled via methods related to FullScreen mode)
 | LGE-MIDlet-Exit | Specifies whether the MIDlet will be destroyed or moved to background in a multitasking environment. With `Minimize` the MIDlet will be sent to background and can only be stopped via the applications menu. | `KILL` , **`POPUP`** , `MINIMIZE`
-| 3G-MIDlet-Exitkey | Specifies whether the MIDlet will be destroyed or moved to background in a multitasking environment. With `Minimize` the MIDlet will be sent to background and can only be stopped via the applications menu. | `KILL` ,** `POPUP`** , `MINIMIZE`
+| 3G-MIDlet-Exitkey | Specifies whether the MIDlet will be destroyed or moved to background in a multitasking environment. With `Minimize` the MIDlet will be sent to background and can only be stopped via the applications menu. | `KILL` ,**`POPUP`** , `MINIMIZE`
 | LGE-MIDlet-Width / LGE-MIDlet-Height | Specifies the width / height of the MIDlet display. The value should be smaller than the phone's LCD size | `(width/height)`
 #### Older devices
 | Attribute | Description | Values
