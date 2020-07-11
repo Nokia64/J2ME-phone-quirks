@@ -226,9 +226,9 @@ Content-Folder: file:///CFCard/
 | Attribute | Description | Values (default in bold)
 | ------------ | ------------ | ------------
 | LGE-MIDlet-Allowed-background | Allows MIDlet execution while multitasking. | `yes` , **`no`**
-| LGE-MIDlet-Delete-Option / LGE-MIDlet-Undelete-Option | Specifies whether the user can delete the MIDlet. `LGE-MIDlet-Delete-Option` and `LGE-MIDlet-Undelete-Option` have opposite values | `yes` ,** `no`**
+| LGE-MIDlet-Delete-Option / LGE-MIDlet-Undelete-Option | Specifies whether the user can delete the MIDlet. `LGE-MIDlet-Delete-Option` and `LGE-MIDlet-Undelete-Option` have opposite values | `yes` ,**`no`**
 | 3G-MIDlet-Undeletable | Specifies whether the user can delete the MIDlet. | `yes` , **`no`**
-| LGE-MIDlet-autolaunch-power-on | Specifies whether to launch the MIDlet when the phone is powered on | `yes` ,** `no`** , `FG` (foreground) 
+| LGE-MIDlet-autolaunch-power-on | Specifies whether to launch the MIDlet when the phone is powered on | `yes` ,**`no`** , `FG` (foreground) 
 | 3G-MIDlet-Auto-Start | Specifies whether to launch the MIDlet when the phone is powered on | `yes` , **`no`** , `FG` (foreground) 
 | LGE-MIDlet-autolaunch-after-install | Specifies whether to automatically launch the MIDlet after installation | `yes` , **`no`**
 | 3G-MIDlet-After-OTA-Install-Start | Specifies whether to automatically launch the MIDlet after installation | `yes` , **`no`**
