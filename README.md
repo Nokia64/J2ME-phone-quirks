@@ -13,4 +13,4 @@ Several tools to obtain keycode and canvas information from real phones:
 ## Misc. resources
 
 Archived results from the TastePhone testing suite, under the _TastePhone_ directory, and the TastePhone executables. Contains information about canvas size, API support and performance for a comprehensive set of phones.
-_TastePhone was originally developed by Thibaut REGNIER. This repository serves archival purposes_
+_TastePhone was originally developed by Thibaut REGNIER. This repository serves archival purposes_.
